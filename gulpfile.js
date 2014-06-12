@@ -3,6 +3,31 @@ var util = require('gulp-util');
 var less = require('gulp-less');
 var NodeWebkitBuilder = require('node-webkit-builder');
 
+gulp.task('copy-font-awesome', function() {
+    return gulp.src([
+            'bower_components/font-awesome/fonts/*',
+        ]).pipe(gulp.dest('app/public/fonts/font-awesome'));
+});
+
+gulp.task('copy-open-sans', function() {
+    return gulp.src([
+            'bower_components/open-sans/fonts/**',
+        ]).pipe(gulp.dest('app/public/fonts/open-sans'));
+});
+
+gulp.task('copy-javascript', function() {
+    return gulp.src([
+            'bower_components/bootstrap/dist/js/bootstrap.min.js',
+            'bower_components/jquery/dist/jquery.min.js'
+        ]).pipe(gulp.dest('app/public/javascripts'));
+});
+
+gulp.task('copy', [
+    'copy-font-awesome',
+    'copy-open-sans',
+    'copy-javascript'
+]);
+
 gulp.task('nwbuild', function() {
     var nwbuilder = new NodeWebkitBuilder({
         files: 'app/**',
