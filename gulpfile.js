@@ -28,7 +28,13 @@ gulp.task('copy', [
     'copy-javascript'
 ]);
 
-gulp.task('nwbuild', function() {
+gulp.task('less', function() {
+    gulp.src('less/main.less')
+        .pipe(less())
+        .pipe(gulp.dest('app/public/stylesheets'));
+});
+
+gulp.task('build', function() {
     var nwbuilder = new NodeWebkitBuilder({
         files: 'app/**',
         platforms: [ 'osx' ],
