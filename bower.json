@@ -1,0 +1,8 @@
+{
+  "name": "gitbook-editor",
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "font-awesome": "~4.1.0",
+    "open-sans": "~1.1.0"
+  }
+}

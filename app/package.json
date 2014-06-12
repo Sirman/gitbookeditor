@@ -1,0 +1,9 @@
+{
+  "name": "gitbook-editor",
+  "version": "0.0.1",
+  "main": "index.html",
+  "dependencies": {
+    "gitbook": "^0.5.2",
+    "jade": "^1.3.1"
+  }
+}
