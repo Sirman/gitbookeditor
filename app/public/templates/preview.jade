@@ -1,0 +1,22 @@
+.inner
+  .toolbar
+    .btn-toolbar(role="toolbar", style="margin: 0;")
+      .btn-group
+        button.btn.btn-default.disabled= preview
+      .btn-group.pull-right
+        button.btn.btn-default.toggle-autoscroll(class=autoScroll?"btn-success":"")
+          i.fa.fa-exchange
+      .btn-group.pull-right
+        button.btn.btn-default.server-start
+          i.fa.fa-bolt
+        button.btn.btn-default.server-stop(style="display: none;")
+          i.fa.fa-stop
+  .content
+    if sections
+      each section in sections
+        if section.type == "normal"
+          section#section.id
+            section.content
+        else
+          section.section-other#section.id
+            section.type

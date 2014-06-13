@@ -1,6 +1,20 @@
 global.window = window;
 
-var Book = require('./book');
+var Grid = require('./grid');
+var Summary = require('./summary');
+var Editor = require('./editor');
+var Preview = require('./preview');
 
-var book = new Book();
-book.render();
+var grid = new Grid(3);
+var summary = new Summary();
+var editor = new Editor();
+var preview = new Preview();
+
+grid.addSection(summary);
+grid.addSection(editor);
+grid.addSection(preview);
+
+grid.render();
+summary.render();
+editor.render();
+preview.render();
