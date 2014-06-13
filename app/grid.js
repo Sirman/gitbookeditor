@@ -45,7 +45,7 @@ Grid.prototype.render = function() {
         });
         $content.append(section.$element);
         $section.append($content);
-        this.$element.append(this.$section);
+        this.$element.append($section);
         if (x < this.columns - 1) {
             var $hbar = $('<div>', {
                 class: 'grid-resize-bar-h',
@@ -59,7 +59,7 @@ Grid.prototype.render = function() {
                 class: 'grid-resize-bar-v',
                 mousedown: this.resizeRowHandler(y)
             });
-            $section.appned($vbar);
+            $section.append($vbar);
             $content.addClass('with-bar-v');
         }
         if (x < this.columns - 1) {

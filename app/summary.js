@@ -17,7 +17,7 @@ Summary.prototype.load = function(next) {
             return next && next(err);
         }
         self.$element.html(html);
-        return next();
+        return next && next();
     });
 };
 

@@ -10,11 +10,19 @@ var summary = new Summary();
 var editor = new Editor();
 var preview = new Preview();
 
+summary.load();
+editor.load();
+preview.load();
+
 grid.addSection(summary);
 grid.addSection(editor);
 grid.addSection(preview);
-
+grid.layout();
 grid.render();
-summary.render();
-editor.render();
-preview.render();
+
+var $element = $('<div>', {
+    class: 'book'
+});
+
+$element.append(grid.$element);
+$('body').append($element);

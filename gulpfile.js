@@ -22,10 +22,17 @@ gulp.task('copy-javascript', function() {
         ]).pipe(gulp.dest('app/public/javascripts'));
 });
 
+gulp.task('copy-ace', function() {
+    return gulp.src([
+            'bower_components/ace/build/src-min/*.js',
+        ]).pipe(gulp.dest('app/public/javascripts/ace'));
+});
+
 gulp.task('copy', [
     'copy-font-awesome',
     'copy-open-sans',
-    'copy-javascript'
+    'copy-javascript',
+    'copy-ace'
 ]);
 
 gulp.task('less', function() {
